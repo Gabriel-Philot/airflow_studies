@@ -17,3 +17,4 @@ venv
 # Ignore all airflow logs/plugins
 .logs/
 .plugins/
+logs/
