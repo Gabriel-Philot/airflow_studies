@@ -1,0 +1,16 @@
+[2024-03-29T17:27:52.388+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_Teste.validação manual__2024-03-29T17:27:45.786392+00:00 [queued]>
+[2024-03-29T17:27:52.402+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_Teste.validação manual__2024-03-29T17:27:45.786392+00:00 [queued]>
+[2024-03-29T17:27:52.403+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-29T17:27:52.414+0000] {taskinstance.py:2214} INFO - Executing <Task(BranchPythonOperator): validação> on 2024-03-29 17:27:45.786392+00:00
+[2024-03-29T17:27:52.419+0000] {standard_task_runner.py:60} INFO - Started process 105 to run task
+[2024-03-29T17:27:52.421+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dag_Teste', 'validação', 'manual__2024-03-29T17:27:45.786392+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/first_dag_test.py', '--cfg-path', '/tmp/tmpk1jakh6x']
+[2024-03-29T17:27:52.422+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask validação
+[2024-03-29T17:27:52.503+0000] {task_command.py:423} INFO - Running <TaskInstance: dag_Teste.validação manual__2024-03-29T17:27:45.786392+00:00 [running]> on host dedf4740d4fb
+[2024-03-29T17:27:52.633+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_Teste' AIRFLOW_CTX_TASK_ID='validação' AIRFLOW_CTX_EXECUTION_DATE='2024-03-29T17:27:45.786392+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-29T17:27:45.786392+00:00'
+[2024-03-29T17:27:52.645+0000] {python.py:202} INFO - Done. Returned value was: não_valido
+[2024-03-29T17:27:52.646+0000] {branch.py:35} INFO - Branch into não_valido
+[2024-03-29T17:27:52.646+0000] {skipmixin.py:178} INFO - Following branch não_valido
+[2024-03-29T17:27:52.662+0000] {skipmixin.py:244} INFO - Skipping tasks [('valido', -1)]
+[2024-03-29T17:27:52.849+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=dag_Teste, task_id=validação, execution_date=20240329T172745, start_date=20240329T172752, end_date=20240329T172752
+[2024-03-29T17:27:52.874+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-29T17:27:52.896+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

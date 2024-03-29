@@ -1,0 +1,26 @@
+[2024-03-29T20:30:30.910+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spotify_test00.transform_data manual__2024-03-29T20:30:27.605968+00:00 [queued]>
+[2024-03-29T20:30:30.917+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spotify_test00.transform_data manual__2024-03-29T20:30:27.605968+00:00 [queued]>
+[2024-03-29T20:30:30.918+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-29T20:30:30.958+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): transform_data> on 2024-03-29 20:30:27.605968+00:00
+[2024-03-29T20:30:30.963+0000] {standard_task_runner.py:60} INFO - Started process 1514 to run task
+[2024-03-29T20:30:30.965+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'spotify_test00', 'transform_data', 'manual__2024-03-29T20:30:27.605968+00:00', '--job-id', '161', '--raw', '--subdir', 'DAGS_FOLDER/dag_spotify_test.py', '--cfg-path', '/tmp/tmpd36dpu6e']
+[2024-03-29T20:30:30.967+0000] {standard_task_runner.py:88} INFO - Job 161: Subtask transform_data
+[2024-03-29T20:30:30.997+0000] {task_command.py:423} INFO - Running <TaskInstance: spotify_test00.transform_data manual__2024-03-29T20:30:27.605968+00:00 [running]> on host 5eb6f8f434b5
+[2024-03-29T20:30:31.068+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spotify_test00' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-03-29T20:30:27.605968+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-03-29T20:30:27.605968+00:00'
+[2024-03-29T20:30:31.069+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/usr/local/airflow/src/main.py", line 23, in transform_api
+    songs = ti.xcom_pull(task_ids='extract_data', value=songs)  # Recupera os dados das músicas
+UnboundLocalError: local variable 'songs' referenced before assignment
+[2024-03-29T20:30:31.075+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=spotify_test00, task_id=transform_data, execution_date=20240329T203027, start_date=20240329T203030, end_date=20240329T203031
+[2024-03-29T20:30:31.115+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 161 for task transform_data (local variable 'songs' referenced before assignment; 1514)
+[2024-03-29T20:30:31.138+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-29T20:30:31.150+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

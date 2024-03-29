@@ -1,0 +1,14 @@
+[2024-03-29T17:41:00.516+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: teste_dependencies.BeatifulSoup scheduled__2023-10-27T00:00:00+00:00 [queued]>
+[2024-03-29T17:41:00.525+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: teste_dependencies.BeatifulSoup scheduled__2023-10-27T00:00:00+00:00 [queued]>
+[2024-03-29T17:41:00.525+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-29T17:41:00.546+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): BeatifulSoup> on 2023-10-27 00:00:00+00:00
+[2024-03-29T17:41:00.552+0000] {standard_task_runner.py:60} INFO - Started process 128 to run task
+[2024-03-29T17:41:00.555+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'teste_dependencies', 'BeatifulSoup', 'scheduled__2023-10-27T00:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/dag_import_test.py', '--cfg-path', '/tmp/tmphn7mjhex']
+[2024-03-29T17:41:00.556+0000] {standard_task_runner.py:88} INFO - Job 37: Subtask BeatifulSoup
+[2024-03-29T17:41:00.595+0000] {task_command.py:423} INFO - Running <TaskInstance: teste_dependencies.BeatifulSoup scheduled__2023-10-27T00:00:00+00:00 [running]> on host a1cc750395ad
+[2024-03-29T17:41:00.716+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='teste_dependencies' AIRFLOW_CTX_TASK_ID='BeatifulSoup' AIRFLOW_CTX_EXECUTION_DATE='2023-10-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-10-27T00:00:00+00:00'
+[2024-03-29T17:41:00.811+0000] {logging_mixin.py:188} INFO - bs4: 4.12.3
+[2024-03-29T17:41:00.811+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-03-29T17:41:00.821+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=teste_dependencies, task_id=BeatifulSoup, execution_date=20231027T000000, start_date=20240329T174100, end_date=20240329T174100
+[2024-03-29T17:41:00.889+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-03-29T17:41:00.949+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

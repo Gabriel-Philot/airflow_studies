@@ -1,0 +1,26 @@
+[2024-03-29T19:57:58.742+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spotify_test00.transform_data scheduled__2024-03-28T13:00:00+00:00 [queued]>
+[2024-03-29T19:57:58.749+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spotify_test00.transform_data scheduled__2024-03-28T13:00:00+00:00 [queued]>
+[2024-03-29T19:57:58.749+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-03-29T19:57:58.788+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): transform_data> on 2024-03-28 13:00:00+00:00
+[2024-03-29T19:57:58.794+0000] {standard_task_runner.py:60} INFO - Started process 944 to run task
+[2024-03-29T19:57:58.799+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'spotify_test00', 'transform_data', 'scheduled__2024-03-28T13:00:00+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/dag_spotify_test.py', '--cfg-path', '/tmp/tmp0k11fqf3']
+[2024-03-29T19:57:58.802+0000] {standard_task_runner.py:88} INFO - Job 133: Subtask transform_data
+[2024-03-29T19:57:58.899+0000] {task_command.py:423} INFO - Running <TaskInstance: spotify_test00.transform_data scheduled__2024-03-28T13:00:00+00:00 [running]> on host 5eb6f8f434b5
+[2024-03-29T19:57:59.034+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spotify_test00' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-03-28T13:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-28T13:00:00+00:00'
+[2024-03-29T19:57:59.035+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/usr/local/airflow/src/main.py", line 22, in transform_api
+    top10 = transform_json_top10(songs)
+TypeError: transform_json_top10() missing 1 required positional argument: 'json_result'
+[2024-03-29T19:57:59.043+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=spotify_test00, task_id=transform_data, execution_date=20240328T130000, start_date=20240329T195758, end_date=20240329T195759
+[2024-03-29T19:57:59.262+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 133 for task transform_data (transform_json_top10() missing 1 required positional argument: 'json_result'; 944)
+[2024-03-29T19:57:59.292+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-03-29T19:57:59.305+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check
