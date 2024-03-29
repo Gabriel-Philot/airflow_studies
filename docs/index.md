@@ -1,19 +1,15 @@
-# HOME 
+# Home
 
-![main_docker](https://github.com/Gabriel-Philot/airflow_studies/blob/main/imgs/core_image.png)
+![main_docker](../assets/imgs/core_image.png)
 
 Documentation Airflow-Docker Studies
 
-## Commands
+## Table of Contents
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+* `v0` - First steps and examples.
+* `v1` - V0 with Medalion Architeture.
+* `v2` - v1 + also persisting the data on a DB.
+* `v3` - v2 + other datasources (webscraping, api, etc).
+* `v4` - v3 + creating a new operator
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

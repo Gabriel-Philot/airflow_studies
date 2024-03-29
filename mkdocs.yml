@@ -1,5 +1,4 @@
-site_name: V0 airflow Doc
-
+site_name: Airflow-Docker Studies
 theme:
   name: material
   palette:
