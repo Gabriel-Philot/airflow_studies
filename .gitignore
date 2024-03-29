@@ -1,0 +1,19 @@
+# Ignore pycache folders
+__pycache__/
+
+# Ignore virtualenv folders
+venv/
+*venv/
+venv
+*.venv
+
+# Ignore IDE config folders
+.idea/
+.vscode/
+
+# Ignore Envs secrets file
+.env
+
+# Ignore all airflow logs/plugins
+.logs/
+.plugins/
