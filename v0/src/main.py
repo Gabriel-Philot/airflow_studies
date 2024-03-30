@@ -26,15 +26,3 @@ def transform_api(**kwargs):
     print(top10_df.head())
     return top10_df
 
-
-
-
-
-
-
-# def transform_api(songs):
-        
-#         top10 = transform_json_top10(artist_name, songs)
-#         top10_df = transform_types(top10)
-#         print(top10_df)
-#         return top10_df

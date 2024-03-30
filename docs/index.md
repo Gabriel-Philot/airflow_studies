@@ -11,5 +11,7 @@ Documentation Airflow-Docker Studies
 * `v2` - v1 + also persisting the data on a DB.
 * `v3` - v2 + other datasources (webscraping, api, etc).
 * `v4` - v3 + creating a new operator
+* `v5` - Workings with alerts and logging.
 
 
+`mkdocs serve` 
