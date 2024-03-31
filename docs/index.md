@@ -15,3 +15,5 @@ Documentation Airflow-Docker Studies
 
 
 `mkdocs serve` 
+
+https://www.linkedin.com/pulse/como-fazer-tratamento-de-dados-com-airflow-docker-salvando-souza/

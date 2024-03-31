@@ -18,3 +18,6 @@ venv
 .logs/
 .plugins/
 logs/
+
+# Ignore Development notebook
+*.ipynb
