@@ -8,27 +8,27 @@ os.chdir('..')
 
 
 from src.resources.spotify_api import SpotifyAPI, client_id, client_secret
+from src.resources.config import bronze_path, file_name_bronze
 
-def json_save_file(name_file, json_data, zone):
+
+def json_save_file_bronze(json_data):
     """
     This function creates a json file in the raw folder.
     """
-    path_datalake = '/opt/local/airflow/datalake'
-    path_zone = f"{path_datalake}/{zone}"
-    print(f"---------- Saving file: {path_zone}/{name_file}")
+    path_datalake_zone = bronze_path
+    file_name = file_name_bronze
+    print(f"---------- Saving file: {path_datalake_zone}/{file_name}")
 
-    os.makedirs(path_zone, exist_ok=True)
-    dest_path = f"{path_zone}/{name_file}.json"
+    os.makedirs(path_datalake_zone, exist_ok=True)
+    dest_path = f"{bronze_path}/{file_name}.json"
     
     with open(dest_path, 'w', encoding='utf-8') as json_file:
         json.dump(json_data, json_file, ensure_ascii=False, indent=4)
-    print(f"\nFile created at: {path_zone}")
+    print(f"\nFile created at: {path_datalake_zone}")
     
 
 
 artist_name = 'Gojira'
-# file_name = f"top10_{artist_name}"
-# zone = 'raw'
 
 def extract_api():
     spotifyApi = SpotifyAPI(client_id, client_secret)
@@ -36,9 +36,7 @@ def extract_api():
     if artist:
         songs = spotifyApi.get_songs_by_artist(artist, "BR")
         print(f"Songs found: {len(songs)}")
-        file_name = "top10_songs_artist"
-        zone = 'bronze'
-        json_save_file(file_name, songs, zone)
+        json_save_file_bronze(songs)
 
     else:
         print(f"No artist found with name {artist_name}")
