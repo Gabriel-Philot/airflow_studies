@@ -1,0 +1,772 @@
+[
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/7D7V6M05UIOTjLdqbwRX0w"
+            },
+            "href": "https://api.spotify.com/v1/albums/7D7V6M05UIOTjLdqbwRX0w",
+            "id": "7D7V6M05UIOTjLdqbwRX0w",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273422c622517ea0bd7eda33e08",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02422c622517ea0bd7eda33e08",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851422c622517ea0bd7eda33e08",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "Magma",
+            "release_date": "2016-06-17",
+            "release_date_precision": "day",
+            "total_tracks": 10,
+            "type": "album",
+            "uri": "spotify:album:7D7V6M05UIOTjLdqbwRX0w"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 269533,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "NLA321600033"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/60fUDmIWuKhngaeBIVhqIV"
+        },
+        "href": "https://api.spotify.com/v1/tracks/60fUDmIWuKhngaeBIVhqIV",
+        "id": "60fUDmIWuKhngaeBIVhqIV",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Stranded",
+        "popularity": 65,
+        "preview_url": "https://p.scdn.co/mp3-preview/7c153b1c254c73fe348016ce9b56c5f18a1b8f19?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 4,
+        "type": "track",
+        "uri": "spotify:track:60fUDmIWuKhngaeBIVhqIV"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/0AvFF0HlQYvYKHaRURGZBs"
+            },
+            "href": "https://api.spotify.com/v1/albums/0AvFF0HlQYvYKHaRURGZBs",
+            "id": "0AvFF0HlQYvYKHaRURGZBs",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273f7b11aeef189b2ec6857d90e",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02f7b11aeef189b2ec6857d90e",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851f7b11aeef189b2ec6857d90e",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "From Mars to Sirius",
+            "release_date": "2005-09-07",
+            "release_date_precision": "day",
+            "total_tracks": 12,
+            "type": "album",
+            "uri": "spotify:album:0AvFF0HlQYvYKHaRURGZBs"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 464453,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "FR6V80520037"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/5OjCsHeByDYEGxMrb1z8KQ"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5OjCsHeByDYEGxMrb1z8KQ",
+        "id": "5OjCsHeByDYEGxMrb1z8KQ",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Flying Whales",
+        "popularity": 61,
+        "preview_url": "https://p.scdn.co/mp3-preview/8156d6253b941124dae267d33bb32ee30268da95?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 7,
+        "type": "track",
+        "uri": "spotify:track:5OjCsHeByDYEGxMrb1z8KQ"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/7D7V6M05UIOTjLdqbwRX0w"
+            },
+            "href": "https://api.spotify.com/v1/albums/7D7V6M05UIOTjLdqbwRX0w",
+            "id": "7D7V6M05UIOTjLdqbwRX0w",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273422c622517ea0bd7eda33e08",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02422c622517ea0bd7eda33e08",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851422c622517ea0bd7eda33e08",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "Magma",
+            "release_date": "2016-06-17",
+            "release_date_precision": "day",
+            "total_tracks": 10,
+            "type": "album",
+            "uri": "spotify:album:7D7V6M05UIOTjLdqbwRX0w"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 212653,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "NLA321600031"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/5uunXHE4kIW6uS4HWAXaOQ"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5uunXHE4kIW6uS4HWAXaOQ",
+        "id": "5uunXHE4kIW6uS4HWAXaOQ",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Silvera",
+        "popularity": 61,
+        "preview_url": "https://p.scdn.co/mp3-preview/0cdd5ba5414f709279dd57f1a7e4a99d3f2f2170?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:5uunXHE4kIW6uS4HWAXaOQ"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/0AvFF0HlQYvYKHaRURGZBs"
+            },
+            "href": "https://api.spotify.com/v1/albums/0AvFF0HlQYvYKHaRURGZBs",
+            "id": "0AvFF0HlQYvYKHaRURGZBs",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273f7b11aeef189b2ec6857d90e",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02f7b11aeef189b2ec6857d90e",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851f7b11aeef189b2ec6857d90e",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "From Mars to Sirius",
+            "release_date": "2005-09-07",
+            "release_date_precision": "day",
+            "total_tracks": 12,
+            "type": "album",
+            "uri": "spotify:album:0AvFF0HlQYvYKHaRURGZBs"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 237840,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "FR6V80520036"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/2pZsQqXFgcY03vRyZxSQhU"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2pZsQqXFgcY03vRyZxSQhU",
+        "id": "2pZsQqXFgcY03vRyZxSQhU",
+        "is_local": false,
+        "is_playable": true,
+        "name": "The Heaviest Matter of the Universe",
+        "popularity": 59,
+        "preview_url": "https://p.scdn.co/mp3-preview/eefc266e4d68e26792fbd02d9b3c127dad1dec9b?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 6,
+        "type": "track",
+        "uri": "spotify:track:2pZsQqXFgcY03vRyZxSQhU"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/3bmdzJRZ4DLRTiA6yBBQcI"
+            },
+            "href": "https://api.spotify.com/v1/albums/3bmdzJRZ4DLRTiA6yBBQcI",
+            "id": "3bmdzJRZ4DLRTiA6yBBQcI",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b2733eb3d09afc2829a9706f891e",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e023eb3d09afc2829a9706f891e",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d000048513eb3d09afc2829a9706f891e",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "Fortitude",
+            "release_date": "2021-04-30",
+            "release_date_precision": "day",
+            "total_tracks": 11,
+            "type": "album",
+            "uri": "spotify:album:3bmdzJRZ4DLRTiA6yBBQcI"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 300783,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "NLA322000471"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/1GWtUkDQk7XC35r7kTPfqx"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1GWtUkDQk7XC35r7kTPfqx",
+        "id": "1GWtUkDQk7XC35r7kTPfqx",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Amazonia",
+        "popularity": 57,
+        "preview_url": "https://p.scdn.co/mp3-preview/9d39429006bb4bba6702a36db9891385156f9baa?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:1GWtUkDQk7XC35r7kTPfqx"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/5dxqD5Kc6cRRi3rErmDfXG"
+            },
+            "href": "https://api.spotify.com/v1/albums/5dxqD5Kc6cRRi3rErmDfXG",
+            "id": "5dxqD5Kc6cRRi3rErmDfXG",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b2733ac9158414ee0e4042ffc56d",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e023ac9158414ee0e4042ffc56d",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d000048513ac9158414ee0e4042ffc56d",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "L'Enfant Sauvage (Special Edition)",
+            "release_date": "2012-06-26",
+            "release_date_precision": "day",
+            "total_tracks": 13,
+            "type": "album",
+            "uri": "spotify:album:5dxqD5Kc6cRRi3rErmDfXG"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 257733,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "NLA321292251"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/4PWxt9Fy949kUtkEi2GI5V"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4PWxt9Fy949kUtkEi2GI5V",
+        "id": "4PWxt9Fy949kUtkEi2GI5V",
+        "is_local": false,
+        "is_playable": true,
+        "name": "L'enfant sauvage",
+        "popularity": 56,
+        "preview_url": "https://p.scdn.co/mp3-preview/1ee4f7269b0f45043f6061a5612edee7c2ba29e9?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:4PWxt9Fy949kUtkEi2GI5V"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/5dxqD5Kc6cRRi3rErmDfXG"
+            },
+            "href": "https://api.spotify.com/v1/albums/5dxqD5Kc6cRRi3rErmDfXG",
+            "id": "5dxqD5Kc6cRRi3rErmDfXG",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b2733ac9158414ee0e4042ffc56d",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e023ac9158414ee0e4042ffc56d",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d000048513ac9158414ee0e4042ffc56d",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "L'Enfant Sauvage (Special Edition)",
+            "release_date": "2012-06-26",
+            "release_date_precision": "day",
+            "total_tracks": 13,
+            "type": "album",
+            "uri": "spotify:album:5dxqD5Kc6cRRi3rErmDfXG"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 231000,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "NLA321292212"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/1rDzUqMRA9VdGCIwzgfeh9"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1rDzUqMRA9VdGCIwzgfeh9",
+        "id": "1rDzUqMRA9VdGCIwzgfeh9",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Born in Winter",
+        "popularity": 55,
+        "preview_url": "https://p.scdn.co/mp3-preview/f267390f3619e4bbeaa74197bb65aae9f1a0d12e?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 10,
+        "type": "track",
+        "uri": "spotify:track:1rDzUqMRA9VdGCIwzgfeh9"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/3bmdzJRZ4DLRTiA6yBBQcI"
+            },
+            "href": "https://api.spotify.com/v1/albums/3bmdzJRZ4DLRTiA6yBBQcI",
+            "id": "3bmdzJRZ4DLRTiA6yBBQcI",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b2733eb3d09afc2829a9706f891e",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e023eb3d09afc2829a9706f891e",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d000048513eb3d09afc2829a9706f891e",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "Fortitude",
+            "release_date": "2021-04-30",
+            "release_date_precision": "day",
+            "total_tracks": 11,
+            "type": "album",
+            "uri": "spotify:album:3bmdzJRZ4DLRTiA6yBBQcI"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 264947,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "NLA322000226"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/7cRGgrQ9eg8V8A4FsSj020"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7cRGgrQ9eg8V8A4FsSj020",
+        "id": "7cRGgrQ9eg8V8A4FsSj020",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Another World",
+        "popularity": 54,
+        "preview_url": "https://p.scdn.co/mp3-preview/ed3fb9a0459c6563448cea4eae7cf52bad3bcc8c?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 3,
+        "type": "track",
+        "uri": "spotify:track:7cRGgrQ9eg8V8A4FsSj020"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/4J79cxsmRqZbI0BKmNFDy2"
+            },
+            "href": "https://api.spotify.com/v1/albums/4J79cxsmRqZbI0BKmNFDy2",
+            "id": "4J79cxsmRqZbI0BKmNFDy2",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273721965ef819404ca1cfd0652",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02721965ef819404ca1cfd0652",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851721965ef819404ca1cfd0652",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "The way of all flesh",
+            "release_date": "2008-10-13",
+            "release_date_precision": "day",
+            "total_tracks": 12,
+            "type": "album",
+            "uri": "spotify:album:4J79cxsmRqZbI0BKmNFDy2"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 594213,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "FRYFO0800008"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/7iMQChXFK33TS49QWhE4tt"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7iMQChXFK33TS49QWhE4tt",
+        "id": "7iMQChXFK33TS49QWhE4tt",
+        "is_local": false,
+        "is_playable": true,
+        "name": "The art of dying",
+        "popularity": 54,
+        "preview_url": "https://p.scdn.co/mp3-preview/0221a94b2c7fb0ecddb0e825020e83bcd02ed64b?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 8,
+        "type": "track",
+        "uri": "spotify:track:7iMQChXFK33TS49QWhE4tt"
+    },
+    {
+        "album": {
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                    "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                    "name": "Gojira",
+                    "type": "artist",
+                    "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/4J79cxsmRqZbI0BKmNFDy2"
+            },
+            "href": "https://api.spotify.com/v1/albums/4J79cxsmRqZbI0BKmNFDy2",
+            "id": "4J79cxsmRqZbI0BKmNFDy2",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/ab67616d0000b273721965ef819404ca1cfd0652",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ab67616d00001e02721965ef819404ca1cfd0652",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ab67616d00004851721965ef819404ca1cfd0652",
+                    "width": 64
+                }
+            ],
+            "is_playable": true,
+            "name": "The way of all flesh",
+            "release_date": "2008-10-13",
+            "release_date_precision": "day",
+            "total_tracks": 12,
+            "type": "album",
+            "uri": "spotify:album:4J79cxsmRqZbI0BKmNFDy2"
+        },
+        "artists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "name": "Gojira",
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            }
+        ],
+        "disc_number": 1,
+        "duration_ms": 246680,
+        "explicit": false,
+        "external_ids": {
+            "isrc": "FRYFO0800002"
+        },
+        "external_urls": {
+            "spotify": "https://open.spotify.com/track/5e0OSsSpWpQ2kS7Z9CGLDu"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5e0OSsSpWpQ2kS7Z9CGLDu",
+        "id": "5e0OSsSpWpQ2kS7Z9CGLDu",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Toxic garbage island",
+        "popularity": 54,
+        "preview_url": "https://p.scdn.co/mp3-preview/4d20b97a5ebbcdf16065f684f84d11a0c3ea47e0?cid=873e408c646d4ee7a7973b97fd36bdd6",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:5e0OSsSpWpQ2kS7Z9CGLDu"
+    }
+]
