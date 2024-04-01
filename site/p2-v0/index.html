@@ -1,0 +1,1082 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../intro/">
+      
+      
+        <link rel="next" href="../p3-v1/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>v0 - Airflow-Docker Studies</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#v0" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Airflow-Docker Studies" class="md-header__button md-logo" aria-label="Airflow-Docker Studies" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Airflow-Docker Studies
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              v0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo Escuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Escuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Airflow-Docker Studies" class="md-nav__button md-logo" aria-label="Airflow-Docker Studies" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Airflow-Docker Studies
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Airflow ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    v0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    v0
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#link-airflow-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link airflow-docs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link-docker-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link docker-docs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-own-docker-studies-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      My own Docker-studies repo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#friend-repos-refence-for-starting-out-balemar-bernardo-alemar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Friend repo's refence for starting out (bAlemar Bernardo Alemar)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youtube-airflow-ref-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      youtube airflow ref video
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev-good-habits-ref-video-luhborba-luciano-borba" class="md-nav__link">
+    <span class="md-ellipsis">
+      dev good habits ref video (luhborba Luciano Borba)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youtube-airflow-ref-video-pass-data-betweenn-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      youtube airflow ref video (pass data betweenn tasks)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-steps-to-start-the-airflow_extended-image-and-some-dag-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      First steps to start the airflow_extended image and some DAG examples.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First steps to start the airflow_extended image and some DAG examples.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-points-to-be-awere-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important points to be awere here:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intructions-to-build-and-run-the-airflow-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intructions to build and run the airflow-docker image:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airflow-web-httplocalhost8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      Airflow-web: http://localhost:8080/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAGS:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DAGS:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-dag-dag_import_testpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      First dag: dag_import_test.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.resources.test_module.get_requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_requests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.resources.test_module.get_beatiful" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_beatiful
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_beatiful">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#second-dag-dag_refresh_testpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second dag: dag_refresh_test.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-dag_spotify_testpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third: dag_spotify_test.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.main.extract_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="extract_api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notice-that-in-the-airflow-context-obtaining-the-return-of-a-different-task-has-its-own-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notice that in the Airflow context, obtaining the return of a different task has its own mechanism.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.main.transform_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_api
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-others-useful-docker-commands-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      LIST OF OTHERS USEFUL DOCKER-COMMANDS HERE:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3-v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4-v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#link-airflow-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link airflow-docs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link-docker-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link docker-docs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-own-docker-studies-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      My own Docker-studies repo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#friend-repos-refence-for-starting-out-balemar-bernardo-alemar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Friend repo's refence for starting out (bAlemar Bernardo Alemar)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youtube-airflow-ref-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      youtube airflow ref video
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dev-good-habits-ref-video-luhborba-luciano-borba" class="md-nav__link">
+    <span class="md-ellipsis">
+      dev good habits ref video (luhborba Luciano Borba)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youtube-airflow-ref-video-pass-data-betweenn-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      youtube airflow ref video (pass data betweenn tasks)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-steps-to-start-the-airflow_extended-image-and-some-dag-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      First steps to start the airflow_extended image and some DAG examples.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First steps to start the airflow_extended image and some DAG examples.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-points-to-be-awere-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important points to be awere here:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intructions-to-build-and-run-the-airflow-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intructions to build and run the airflow-docker image:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airflow-web-httplocalhost8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      Airflow-web: http://localhost:8080/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAGS:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DAGS:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-dag-dag_import_testpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      First dag: dag_import_test.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.resources.test_module.get_requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_requests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.resources.test_module.get_beatiful" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_beatiful
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_beatiful">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#second-dag-dag_refresh_testpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second dag: dag_refresh_test.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-dag_spotify_testpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third: dag_spotify_test.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.main.extract_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="extract_api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notice-that-in-the-airflow-context-obtaining-the-return-of-a-different-task-has-its-own-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notice that in the Airflow context, obtaining the return of a different task has its own mechanism.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v0.src.main.transform_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_api
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-others-useful-docker-commands-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      LIST OF OTHERS USEFUL DOCKER-COMMANDS HERE:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="v0">v0</h1>
+<p>Ref:</p>
+<h4 id="link-airflow-docs"><a href="https://airflow.apache.org/docs/">Link <strong>airflow-docs</strong>  </a></h4>
+<h4 id="link-docker-docs"><a href="https://docs.docker.com/reference/cli/docker/container/run/">Link <strong>docker-docs</strong>  </a></h4>
+<h4 id="my-own-docker-studies-repo"><a href="https://github.com/Gabriel-Philot/docker_studies"> My own Docker-studies repo </a></h4>
+<h4 id="friend-repos-refence-for-starting-out-balemar-bernardo-alemar"><a href="https://github.com/bAlemar/WebScraping-AirFlow/blob/main/V2/README.md">Friend repo's refence for starting out (bAlemar Bernardo Alemar)</a></h4>
+<h4 id="youtube-airflow-ref-video"><a href="https://www.youtube.com/watch?v=w8Z--fpEpyU">youtube airflow ref video</a></h4>
+<h4 id="dev-good-habits-ref-video-luhborba-luciano-borba"><a href="https://www.youtube.com/watch?v=h_tir_Lfx8M">dev good habits ref video (luhborba Luciano Borba)</a></h4>
+<h4 id="youtube-airflow-ref-video-pass-data-betweenn-tasks"><a href="https://www.youtube.com/watch?v=WLXLU63WXTg">youtube airflow ref video (pass data betweenn tasks)</a></h4>
+<h2 id="first-steps-to-start-the-airflow_extended-image-and-some-dag-examples">First steps to start the airflow_extended image and some DAG examples.</h2>
+<p><em>Here, our goal will be to make some easy DAGs to get started. One thing that's different from other first-step guides is that this version (v0) starts with the use of imported functions from DAG 0 and beyond.</em></p>
+<p><em>Also, it's important to mention that because this approach will be using my own functions, it will utilize only PythonOperator.</em></p>
+<ul>
+<li>The first thing after installing all the requirements is to create the Dockerfile and docker-compose.yaml files.</li>
+</ul>
+<blockquote>
+<p>[!Note]
+The project's organization will affect the interaction between these two files.</p>
+</blockquote>
+<h3 id="important-points-to-be-awere-here">Important points to be awere here:</h3>
+<p><em>In docker-compose.file</em>:</p>
+<p>(1) Look for the image part of the aiflow: <code>image: ${AIRFLOW_IMAGE_NAME:-{image name}:{image tag}}</code></p>
+<p>e.g.: <code>image: ${AIRFLOW_IMAGE_NAME:-extening_v0_airflow_image:1.0.0}</code></p>
+<p>this image name and image tag wil be used in the docker build command.</p>
+<p>(2) in volumes add your src folder, to get autoreload of your modules.</p>
+<pre><code>volumes:
+    ....
+    ....
+    ....
+    - ./src:/usr/local/airflow/src # (!!!!)
+</code></pre>
+<p>(3) [Optional] here turn off the tons of example dags that floods our vision.
+<code>AIRFLOW__CORE__LOAD_EXAMPLES: 'false</code></p>
+<h3 id="intructions-to-build-and-run-the-airflow-docker-image">Intructions to build and run the airflow-docker image:</h3>
+<p><em>(1) Build the Dockerfile (extended image):</em></p>
+<p><code>docker build . --tag {image name}:{image tag}</code>  <strong>SAME AS IN docker-compose.file</strong></p>
+<p><em>(2) Giving linux some variables definitions:</em></p>
+<p><code>echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" &gt; .env</code></p>
+<p><em>(3) Run the docker-compose first start for airflow</em></p>
+<p><code>docker-compose up airflow-init</code></p>
+<p>Here dont worry, after this its done problably you will see your airflow-container going down by him self.</p>
+<pre><code>airflow-init_1       |airflow already exist in the db
+airflow-init_1       | 2.8.2
+v0_airflow-init_1 exited with code 0
+</code></pre>
+<p>Don't worry, these are normal checks to see if the database is already created.</p>
+<p><em>(4) Normal docker-compose up to start the airflow and start the game</em></p>
+<p><code>docker-compose up</code></p>
+<h3 id="airflow-web-httplocalhost8080">Airflow-web: http://localhost:8080/</h3>
+<ul>
+<li>username: airflow</li>
+<li>password: airflow</li>
+</ul>
+<p>If you're not familiar with the Airflow UI, I strongly recommend taking some more introductory courses. However, I will mainly focus on the DAGs, specifically how to manually trigger them and examine the logs of the runs.</p>
+<p>But here its a visual example of how to navigate the UI.</p>
+<p><img alt="ui_airflow_debugin" src="../assets/imgs/airflow_ui.png" /></p>
+<h2 id="dags">DAGS:</h2>
+<h3 id="first-dag-dag_import_testpy"><em>First dag: dag_import_test.py</em></h3>
+<p>This dag its just a test to see if we can import modules from other files.
+it uses two functions.</p>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v0.src.resources.test_module.get_requests"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v0/src/resources/test_module.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_requests</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">requests</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Requestes: </span><span class="si">{</span><span class="n">requests</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v0.src.resources.test_module.get_beatiful"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v0/src/resources/test_module.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_beatiful</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">bs4</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bs4: </span><span class="si">{</span><span class="n">bs4</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><p>(Just two functions that basically print a library.)</p>
+<h3 id="second-dag-dag_refresh_testpy"><em>Second dag: dag_refresh_test.py</em></h3>
+<p>This dag its just a test to see if the modules can be update without the need to restart the container.</p>
+<h3 id="third-dag_spotify_testpy"><em>Third: dag_spotify_test.py</em></h3>
+<p>This dag its a short adapitation of one docker studie that i done, my goal was to test out the extraction and process functions in airflow.</p>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v0.src.main.extract_api"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v0/src/main.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_api</span><span class="p">(</span><span class="n">artist_name</span><span class="p">):</span>
+    <span class="n">spotifyApi</span> <span class="o">=</span> <span class="n">SpotifyAPI</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">)</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="n">spotifyApi</span><span class="o">.</span><span class="n">search_for_artist</span><span class="p">(</span><span class="n">artist_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="n">songs</span> <span class="o">=</span> <span class="n">spotifyApi</span><span class="o">.</span><span class="n">get_songs_by_artist</span><span class="p">(</span><span class="n">artist</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="s2">&quot;BR&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Songs found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">songs</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">artist</span><span class="p">,</span> <span class="n">songs</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No artist found with name </span><span class="si">{</span><span class="n">artist_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><h4 id="notice-that-in-the-airflow-context-obtaining-the-return-of-a-different-task-has-its-own-mechanism"><em>Notice that in the Airflow context, obtaining the return of a different task has its own mechanism.</em></h4>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v0.src.main.transform_api"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v0/src/main.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transform_api</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">ti</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;ti&quot;</span><span class="p">]</span>
+    <span class="n">artist</span><span class="p">,</span> <span class="n">songs</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">xcom_pull</span><span class="p">(</span><span class="n">task_ids</span><span class="o">=</span><span class="s2">&quot;extract_data&quot;</span><span class="p">)</span>
+    <span class="n">top10</span> <span class="o">=</span> <span class="n">transform_json_top10</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">songs</span><span class="p">)</span>
+    <span class="n">top10_df</span> <span class="o">=</span> <span class="n">transform_types</span><span class="p">(</span><span class="n">top10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">top10_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">top10_df</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><p>so basically its a excract, load and print dag for testing airflow+docker working togetter.</p>
+<h2 id="list-of-others-useful-docker-commands-here">LIST OF OTHERS USEFUL DOCKER-COMMANDS HERE:</h2>
+<pre><code>docker-compose down
+docker ps
+docker ps -a
+docker images
+docker image rm {image.name (or id)}:{image.tag} # Correct way to erase your images
+docker rmi $(docker images -q) # ERASES ALL THE IMAGES !!! NOT RECOMMENDED TO USE NEAR PROD SYSTEMS
+docker volume ls
+docker volume rm {volume.name}
+
+</code></pre>
+<blockquote>
+<p>🍀 TIP: # use autocomplete tab(botton of your keyboard) to names or ids</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>

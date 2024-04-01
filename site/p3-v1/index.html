@@ -1,0 +1,1047 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../p2-v0/">
+      
+      
+        <link rel="next" href="../p4-v2/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>v1 - Airflow-Docker Studies</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Airflow-Docker Studies" class="md-header__button md-logo" aria-label="Airflow-Docker Studies" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Airflow-Docker Studies
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo Claro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo Claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo Escuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo Escuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Airflow-Docker Studies" class="md-nav__button md-logo" aria-label="Airflow-Docker Studies" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Airflow-Docker Studies
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is Airflow ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p2-v0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    v1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    v1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-data-airflow-ref" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local data airflow ref
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-medallion-architecture-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Medallion Architecture? (Databricks)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulating-a-medallion-architecture-with-etl-orchestrated-by-airflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulating a "Medallion" architecture with ETL orchestrated by Airflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulating a "Medallion" architecture with ETL orchestrated by Airflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-upon-v0-as-the-base-model-with-almost-identical-files-and-structures-we-only-need-to-concern-ourselves-with-minor-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building upon V0 as the base model (with almost identical files and structures), we only need to concern ourselves with minor changes.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-points-to-be-awere-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important points to be awere here:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other files:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.ingestion_job.extract_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_api
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.processing_job.transform_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_api
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAGS:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DAGS:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spotify_test01" class="md-nav__link">
+    <span class="md-ellipsis">
+      spotify_test01:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spotify_test01:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_task" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.ingestion_job.extract_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="extract_api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process_task" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.processing_job.transform_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="transform_api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform_task" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.businessrules_job.trasform_silver_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      trasform_silver_data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4-v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-data-airflow-ref" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local data airflow ref
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-medallion-architecture-databricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Medallion Architecture? (Databricks)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulating-a-medallion-architecture-with-etl-orchestrated-by-airflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulating a "Medallion" architecture with ETL orchestrated by Airflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulating a "Medallion" architecture with ETL orchestrated by Airflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-upon-v0-as-the-base-model-with-almost-identical-files-and-structures-we-only-need-to-concern-ourselves-with-minor-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building upon V0 as the base model (with almost identical files and structures), we only need to concern ourselves with minor changes.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-points-to-be-awere-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important points to be awere here:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other files:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.ingestion_job.extract_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_api
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.processing_job.transform_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_api
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAGS:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DAGS:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spotify_test01" class="md-nav__link">
+    <span class="md-ellipsis">
+      spotify_test01:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spotify_test01:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract_task" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.ingestion_job.extract_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      extract_api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="extract_api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process_task" class="md-nav__link">
+    <span class="md-ellipsis">
+      process_task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.processing_job.transform_api" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_api
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="transform_api">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transform_task" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform_task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1.src.businessrules_job.trasform_silver_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      trasform_silver_data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="v1">v1</h1>
+<p>Ref:</p>
+<h4 id="local-data-airflow-ref"><a href="https://www.linkedin.com/pulse/como-fazer-tratamento-de-dados-com-airflow-docker-salvando-souza/"><strong>Local data airflow ref</strong>  </a></h4>
+<h4 id="what-is-a-medallion-architecture-databricks"><a href="https://www.databricks.com/glossary/medallion-architecture"><strong>What is a Medallion Architecture? (Databricks)</strong>  </a></h4>
+<h2 id="simulating-a-medallion-architecture-with-etl-orchestrated-by-airflow">Simulating a "Medallion" architecture with ETL orchestrated by Airflow</h2>
+<p><img alt="v1_dag" src="../assets/imgs/v1_arc_draw.png" /></p>
+<blockquote>
+<p>❗WARNING: Airflow isnt design to be a process data tool 🔧, but to orchestrat the diferent tools to process data and manage the process. But in this exemple and sometimes it can do it with small amounts of data.</p>
+<p>❗WARNING: The term "simulation of Medallion architecture" is used because the data will be stored outside of a data lake (locally). I chose to begin with this step for the sake of a simpler and 💰 cost-free 💰 example.</p>
+</blockquote>
+<p><em>I'm continuing to utilize my own functions and restricting the use to PythonOperator exclusively for this version</em></p>
+<h4 id="building-upon-v0-as-the-base-model-with-almost-identical-files-and-structures-we-only-need-to-concern-ourselves-with-minor-changes">Building upon V0 as the base model (with almost identical files and structures), we only need to concern ourselves with minor changes.</h4>
+<p>(The focus here is to highlight the significant differences and the challenging aspects that require attention and effort to resolve.)</p>
+<h3 id="important-points-to-be-awere-here">Important points to be awere here:</h3>
+<p><em>In docker-compose.file</em>:</p>
+<p>(only highlight the changes)</p>
+<p>(1) in volumes add your src &amp; datalake folder, to get autoreload of your modules.</p>
+<pre><code>volumes:
+    ....
+    ....
+    ....
+    - ./src:/usr/local/airflow/src # (!!!!)
+    - ./datalake:/opt/local/airflow/datalake # (!!!!)
+</code></pre>
+<p>❗WARNING: Here you need to pay very atetention cause this is folder that later wil be acessed by the airflow-container. Its diferent from the src folder cause you need to write/create things in there.</p>
+<p><em>The path of this folder can be a bit tricky to debug, as it varies depending on the operating system. However, since we're running it in a container, we must ensure that the path matches the one inside the container.</em></p>
+<p>One exemple here for the sake of explain the situation:</p>
+<pre><code class="language-python">
+# HIGHLIGHT on the datadatalake_path = volume in docker-compose.file
+datalake_path = '/opt/local/airflow/datalake'
+bronze_path = f&quot;{data_path}/bronze&quot;
+
+def json_save_file_bronze(json_data):
+    &quot;&quot;&quot;
+    This function creates a json file in the raw folder.
+    &quot;&quot;&quot;
+    path_datalake_zone = bronze_path
+    file_name = file_name_bronze
+    print(f&quot;---------- Saving file: {path_datalake_zone}/{file_name}&quot;)
+    # Creates folder if doesnt exist
+    os.makedirs(path_datalake_zone, exist_ok=True)
+    dest_path = f&quot;{bronze_path}/{file_name}.json&quot;
+
+    with open(dest_path, 'w', encoding='utf-8') as json_file:
+        # save file in dest path
+        json.dump(json_data, json_file, ensure_ascii=False, indent=4)
+    print(f&quot;\nFile created at: {path_datalake_zone}&quot;)
+
+</code></pre>
+<p>(2) For the sake of fixing the content.</p>
+<p>look for image: <code>${AIRFLOW_IMAGE_NAME:-{image name}:{image tag}}</code> in compose file</p>
+<p>this time i changed v0 -&gt; v1 <code>image: ${AIRFLOW_IMAGE_NAME:-extening_v1_airflow_image:1.0.0}</code></p>
+<p>this image name and image tag wil be used in the docker build command.
+<code>docker build . --tag extening_v1_airflow_image:1.0.0</code></p>
+<h3 id="other-files">Other files:</h3>
+<p>Did some changes in the functions, and add a feel others to adequate our goal here. </p>
+<p>The extraction part know saves the data in json format in the bronze zone
+</p>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v1.src.ingestion_job.extract_api"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v1/src/ingestion_job.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_api</span><span class="p">():</span>
+    <span class="n">spotifyApi</span> <span class="o">=</span> <span class="n">SpotifyAPI</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">)</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="n">spotifyApi</span><span class="o">.</span><span class="n">search_for_artist</span><span class="p">(</span><span class="n">artist_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="n">songs</span> <span class="o">=</span> <span class="n">spotifyApi</span><span class="o">.</span><span class="n">get_songs_by_artist</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="s2">&quot;BR&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Songs found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">songs</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">json_save_file_bronze</span><span class="p">(</span><span class="n">songs</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No artist found with name </span><span class="si">{</span><span class="n">artist_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><p>The transform_json_top_10 wil now be receaving a json file, and the step is calling other function that saves the data in parquet format in the silver zone
+</p>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v1.src.processing_job.transform_api"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v1/src/processing_job.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transform_api</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bronze_file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">songs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">top10</span> <span class="o">=</span> <span class="n">transform_json_top10</span><span class="p">(</span><span class="n">songs</span><span class="p">)</span>
+    <span class="n">top10_df</span> <span class="o">=</span> <span class="n">transform_types</span><span class="p">(</span><span class="n">top10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">top10_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+    <span class="n">save_parquet_from_json</span><span class="p">(</span><span class="n">top10_df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><blockquote>
+<p>🔎 Take a look and explore other changes in the code, guess there's no great changes or additions that i forgot to highlight here.</p>
+</blockquote>
+<p>Utilize the same instructions from v0 (with the necessary modifications) to start Airflow.</p>
+<h2 id="dags">DAGS:</h2>
+<p><img alt="v1_dag" src="../assets/imgs/dag_v1_airflow_ui.png" /></p>
+<h3 id="spotify_test01"><em>spotify_test01:</em></h3>
+<p>[Resume]
+This DAG will extract data from the Spotify API and save it in the bronze zone (raw JSON format). Then, it will transform the data and save it in the silver zone (Parquet format). Finally, it will apply business rules to the data and save it in the gold zone (Parquet format).</p>
+<p>For each task, there's a main function designed to solve each part, which will be called upon execution.</p>
+<h4 id="extract_task">extract_task</h4>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v1.src.ingestion_job.extract_api"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v1/src/ingestion_job.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">extract_api</span><span class="p">():</span>
+    <span class="n">spotifyApi</span> <span class="o">=</span> <span class="n">SpotifyAPI</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">)</span>
+    <span class="n">artist</span> <span class="o">=</span> <span class="n">spotifyApi</span><span class="o">.</span><span class="n">search_for_artist</span><span class="p">(</span><span class="n">artist_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">artist</span><span class="p">:</span>
+        <span class="n">songs</span> <span class="o">=</span> <span class="n">spotifyApi</span><span class="o">.</span><span class="n">get_songs_by_artist</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="s2">&quot;BR&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Songs found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">songs</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">json_save_file_bronze</span><span class="p">(</span><span class="n">songs</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No artist found with name </span><span class="si">{</span><span class="n">artist_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><h4 id="process_task">process_task</h4>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v1.src.processing_job.transform_api"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v1/src/processing_job.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transform_api</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bronze_file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">songs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">top10</span> <span class="o">=</span> <span class="n">transform_json_top10</span><span class="p">(</span><span class="n">songs</span><span class="p">)</span>
+    <span class="n">top10_df</span> <span class="o">=</span> <span class="n">transform_types</span><span class="p">(</span><span class="n">top10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">top10_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+    <span class="n">save_parquet_from_json</span><span class="p">(</span><span class="n">top10_df</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div><h4 id="transform_task">transform_task</h4>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="v1.src.businessrules_job.trasform_silver_data"></a>
+  <div class="doc doc-contents first">
+
+          <details class="quote">
+            <summary>Source code in <code>v1/src/businessrules_job.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">trasform_silver_data</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">silver_file_path</span><span class="p">)</span>
+    <span class="n">grupocols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name_artist&quot;</span><span class="p">,</span> <span class="s2">&quot;album_name&quot;</span><span class="p">]</span>
+    <span class="n">df_agregate</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">grupocols</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;kpi_songs&quot;</span><span class="p">})</span>
+    <span class="p">)</span>
+    <span class="n">save_gold_data</span><span class="p">(</span><span class="n">df_agregate</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>
