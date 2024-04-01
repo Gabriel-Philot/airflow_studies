@@ -21,3 +21,7 @@ logs/
 
 # Ignore Development notebook
 *.ipynb
+
+
+# Ignore Devolement csvs
+test.csv

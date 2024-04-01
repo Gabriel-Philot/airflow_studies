@@ -14,9 +14,9 @@ client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 
 # BASE URLS
-TOKEN_BASE_URL = 'https://accounts.spotify.com/api/token'
-ARTIST_BASE_URL = 'https://api.spotify.com/v1/search?'
-TOP_SONGS_BASE_URL = 'https://api.spotify.com/v1/artists'
+TOKEN_BASE_URL = "https://accounts.spotify.com/api/token"
+ARTIST_BASE_URL = "https://api.spotify.com/v1/search?"
+TOP_SONGS_BASE_URL = "https://api.spotify.com/v1/artists"
 
 
 class SpotifyAPI:
@@ -27,12 +27,12 @@ class SpotifyAPI:
 
     def get_token(self):
         auth_string = f"{self.client_id}:{self.client_secret}"
-        au_bytes = auth_string.encode('utf-8')
-        auth_base64 = str(base64.b64encode(au_bytes), 'utf-8')
+        au_bytes = auth_string.encode("utf-8")
+        auth_base64 = str(base64.b64encode(au_bytes), "utf-8")
 
         headers = {
             "Authorization": "Basic " + auth_base64,
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded",
         }
         data = {"grant_type": "client_credentials"}
         result = post(TOKEN_BASE_URL, headers=headers, data=data)
@@ -48,10 +48,10 @@ class SpotifyAPI:
     def search_for_artist(self, artistname):
         headers = self.get_aut_header()
         query = f"q={artistname}&type=artist&tlimit=1"
-        
+
         query_url = ARTIST_BASE_URL + query
         result = get(query_url, headers=headers)
-        json_result = json.loads(result.content)['artists']['items']
+        json_result = json.loads(result.content)["artists"]["items"]
 
         if len(json_result) == 0:
             print("No artist with this name exists...")
@@ -62,8 +62,5 @@ class SpotifyAPI:
         url = f"{TOP_SONGS_BASE_URL}/{artist_id}/top-tracks?country={country}"
         headers = self.get_aut_header()
         result = get(url, headers=headers)
-        json_result = json.loads(result.content)['tracks']
+        json_result = json.loads(result.content)["tracks"]
         return json_result
-    
-
-

@@ -1,7 +1,6 @@
-
 # Organization of the paths to datalake
 
-data_path = '/opt/local/airflow/datalake'
+data_path = "/opt/local/airflow/datalake"
 
 bronze_path = f"{data_path}/bronze"
 silver_path = f"{data_path}/silver"
