@@ -1,6 +1,6 @@
 # Home
 
-![Docker_core](../assets/imgs/core_image.png)
+![airflow_docker_image](../assets/imgs/core_image.png)
 
 Documentation Airflow-Docker Studies
 
