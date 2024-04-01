@@ -6,7 +6,7 @@ Documentation Airflow-Docker Studies
 
 ## Table of Contents
 
-* `Intro` - What is Airflow? 🔨
+* `Intro` - What is Airflow? ✅🔨
 * `v0` - First steps and examples. ✅
 * `v1` - v0 spotify etl example with Medalion Architeture simulation. ✅
 * `v2` - v1 + also persisting the data on a db. 🔨

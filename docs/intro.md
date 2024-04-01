@@ -35,3 +35,4 @@ Let's delve into the key structures of Apache Airflow and how they work together
 
 By integrating these structures within Airflow's technological context, we can visualize how it elegantly coordinates data processes, creating a symphony of efficiency and control. Each element plays a vital role, contributing to the smooth and successful execution of data workflows.
 
+💻 Note: Probably will keep enhancing and adding/changing things here.
