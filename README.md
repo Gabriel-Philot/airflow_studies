@@ -17,4 +17,4 @@ Documentation Airflow-Docker Studies
 * `v9` - K8 💡
 
 
-### Check out the details and more in link of the documentation: https://gabriel-philot.github.io/airflow_studies/
+### Check out the details and more -> documentation: https://gabriel-philot.github.io/airflow_studies/
