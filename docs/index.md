@@ -1,6 +1,6 @@
 # Home
 
-![maestro](../assets/imgs/core_image.png)
+![Docker_core](../assets/imgs/core_image.png)
 
 Documentation Airflow-Docker Studies
 
