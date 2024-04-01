@@ -17,14 +17,4 @@ Documentation Airflow-Docker Studies
 * `v9` - K8 💡
 
 
-*Check out the link of the documentation:* https://gabriel-philot.github.io/airflow_studies/
-
-Fala galera, seguindo com meus estudos com o Airflow, decidi trazer mais um guiazinho/documentação.
-
-
-
-Ele está longe de estar no fim esse bixo tem muita coisa para cavar.
-
-
-
-Tive ajuda de diversos matérias e cursos que deixei referenciado em cada versão que fiz.
+### Check out the link of the documentation: https://gabriel-philot.github.io/airflow_studies/
