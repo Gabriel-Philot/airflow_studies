@@ -12,7 +12,7 @@ Understanding the context behind Airflow's necessity allows readers to better ap
 
 Imagine Apache Airflow as a skilled conductor leading an orchestra of data. Just as a conductor coordinates different instruments to create musical harmony, Airflow orchestrates various data processes into a cohesive workflow.
 
-At the beginning of the data concert, Airflow's conductor calls the right musicians to the stage, represented by data extraction tasks fetching necessary information from diverse sources. Like a vigilant conductor, Airflow ensures each "song" (or task) starts at the right moment, establishing dependencies between them to ensure the workflow progresses smoothly and efficiently.
+At the beginning of the data concert, Airflow's conductor calls the right musicians to the stage, represented by data extraction tasks fetching necessary information from diverse sources. Like a vigilant conductor, Airflow ensures each "instrument" (or task) starts at the right moment, establishing dependencies between them to ensure the workflow progresses smoothly and efficiently.
 
 As the concert progresses, Airflow's conductor closely monitors the progress, ensuring each note is played at the right time. It maintains the rhythm of the data flow, scheduling tasks to execute at the most appropriate moments, ensuring the data process is completed on time and accurately.
 
