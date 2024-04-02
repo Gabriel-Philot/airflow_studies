@@ -1,6 +1,6 @@
 # Home
 
-![airflow_docker_image_core](https://github.com/Gabriel-Philot/airflow_studies/blob/main/docs/assets/imgs/doc_core_image.png)
+<img src="./assets/imgs/doc_core_image.png" />
 
 Documentation Airflow-Docker Studies
 
