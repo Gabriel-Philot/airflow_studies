@@ -887,7 +887,7 @@ def json_save_file_bronze(json_data):
 <p><img alt="v1_dag" src="../assets/imgs/dag_v1_airflow_ui.png" /></p>
 <h3 id="spotify_test01"><em>spotify_test01:</em></h3>
 <p>[Resume]
-This DAG will extract data from the Spotify API and save it in the bronze zone (raw JSON format). Then, it will transform the data and save it in the silver zone (Parquet format). Finally, it will apply business rules to the data and save it in the gold zone (Parquet format).</p>
+This DAG will extract data from the Spotify API and save it in the bronze zone (raw JSON format). Then, it will transform the data and save it in the silver zone (Parquet format). Finally, it will apply business rules to the data and save it in the gold zone (CSV format).</p>
 <p>For each task, there's a main function designed to solve each part, which will be called upon execution.</p>
 <h4 id="extract_task">extract_task</h4>
 
